@@ -9,6 +9,12 @@ export default ({ todos, addTodo, removeTodo }) => {
         value={text}
         placeholder="To do ..."
         onChange={(e) => changeText(e.target.value)}
+        onKeyUp={(e) => {
+          if (e.keyCode === 13) {
+            if (text !== "") addTodo(text);
+            changeText("");
+          }
+        }}
         style={styles.input}
       />
       <button

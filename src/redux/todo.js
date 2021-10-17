@@ -1,5 +1,6 @@
 const ADD_TODO = "ADD_TODO";
 const REMOVE_TODO = "REMOVE_TODO";
+let id = 0;
 
 const initTodoState = {
   items: []
@@ -23,7 +24,7 @@ const reducer = (state = initTodoState, action) => {
         items: [
           ...state.items,
           {
-            id: `${state.items.length + 1}`,
+            id: `todo${(id = id + 1)}`,
             content: action.payload
           }
         ]
