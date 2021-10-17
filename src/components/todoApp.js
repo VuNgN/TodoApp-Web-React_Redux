@@ -19,7 +19,7 @@ export default ({ todos, addTodo, removeTodo }) => {
       />
       <button
         onClick={() => {
-          if (text !== "") addTodo(text);
+          addTodo(text);
           changeText("");
         }}
         style={styles.addBtn}
